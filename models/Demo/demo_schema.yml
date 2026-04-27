@@ -32,6 +32,7 @@ models:
     description: "DBT model for final orders table"
 
 
+
                   
 
 sources:
@@ -71,3 +72,10 @@ sources:
     tables: 
 
       - name: BASE_ORDERS
+
+  - name: patient
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+
+      - name: patient_src
