@@ -22,6 +22,8 @@ models:
     description: "DBT model for customer view"
   - name: sales
     description: "DBT model for sales table"
+  - name: product
+    description: "DBT model for product table"
 
 
                   
@@ -45,3 +47,9 @@ sources:
     tables:
 
       - name: sales_src
+  - name: product
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+
+      - name: product_src
