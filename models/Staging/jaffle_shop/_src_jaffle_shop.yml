@@ -10,4 +10,4 @@ sources:
     schema: stripe
     tables:
 
-      - name: payment
+      - name: payment 
