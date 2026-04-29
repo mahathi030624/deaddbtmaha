@@ -2,7 +2,7 @@ models:
   - name: stg_stripe__payment
     description: "The grain of this table is one unique payment per row"
     columns:
-      - name: payemnt_id
+      - name: payment_id
         description: Primary key for the payment table
         data_tests:
           - unique
