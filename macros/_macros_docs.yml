@@ -1,0 +1,38 @@
+macros:
+  - name: concat_macro
+    description: cancating two strings e.g first_name + last_name to form a full_name
+    arguments:
+      - name: column_name
+        type: string
+        description: name of the column to be imported
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
