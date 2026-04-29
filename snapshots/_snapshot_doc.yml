@@ -1,0 +1,13 @@
+snapshots:
+  - name: patient_snapshot
+    description: snapshot to record SCD type 2 of patient 
+    relation: source('patient','patient_src')
+    config: 
+      schema: snapshots
+      database: DBT_DB
+      unique_key: PATIENT_ID
+      strategy: timestamp
+      updated_at: created_at
+      check_cols: ['PATIENT_NAME','PATIENT_CONTACT_NUMBER','PATIENT_EMAIL_ID','PATIENT_ADDRESS']
+      hard_deletes: ignore
+      dbt_valid_to_current: "to_date('9999-12-31')"
