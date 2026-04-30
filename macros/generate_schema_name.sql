@@ -4,7 +4,7 @@
     {%- set default_schema = target.schema -%}
     {%- set env = env_var('DBT_ENV_NAME') -%}
 
-
+    {{ log("DEBUG: Target=" ~ target.name ~ " | Custom=" ~ custom_schema_name, info=True) }}
     {%- if custom_schema_name is not none or target.name != 'prod' -%}
 
         {{ default_schema }}
