@@ -1,18 +1,20 @@
 {% macro generate_schema_name(custom_schema_name, node) -%}
 
-    {%- set default_schema = target.schema -%}
-    {%- set env = env_var('DBT_ENV_NAME') -%}
+    {{ "FORCED_SCHEMA" }}
 
-    {{ log("DEBUG: target.name is [" ~ target.name ~ "] and custom_schema_name is [" ~ custom_schema_name ~ "]", info=True) }}
+    -- {%- set default_schema = target.schema -%}
+    -- {%- set env = env_var('DBT_ENV_NAME') -%}
 
-    {%- if custom_schema_name is not none or target.name != 'prod' -%}
+    -- {{ log("DEBUG: target.name is [" ~ target.name ~ "] and custom_schema_name is [" ~ custom_schema_name ~ "]", info=True) }}
 
-        {{ default_schema }}
+    -- {%- if custom_schema_name is not none or target.name != 'prod' -%}
 
-    {%- else -%}
+    --     {{ default_schema }}
+
+    -- {%- else -%}
     
-        {{ custom_schema_name | trim }}
+    --     {{ custom_schema_name | trim }}
 
-    {%- endif -%}
+    -- {%- endif -%}
 
 {%- endmacro %}
