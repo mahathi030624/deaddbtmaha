@@ -6,13 +6,13 @@
     {%- set env = env_var('DBT_ENV_NAME') -%}
 
     
-    {%- if custom_schema_name is not none or target.name != 'prod' -%}
+    {%- if custom_schema_name is not none -%}
 
-        {{ default_schema }}
+        {{ custom_schema_name | trim }}
 
     {%- else -%}
     
-        {{ custom_schema_name | trim }}
+        {{ default_schema }}
 
     {%- endif -%}
 
