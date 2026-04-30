@@ -39,7 +39,7 @@ models:
   dbt_funda_on_demand:
     Staging:
       +materialized: view
-      +schema: Staging
+      +schema: staging
     
     marts:
       +materialized: table

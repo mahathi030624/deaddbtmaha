@@ -3,13 +3,15 @@
     {%- set default_schema = target.schema -%}
     {%- set env = env_var('DBT_ENV_NAME') -%}
 
-    {%- if custom_schema_name is not none and (target.name == 'prod' or env == 'prod') -%}
+    {{ log("DEBUG: target.name is [" ~ target.name ~ "] and custom_schema_name is [" ~ custom_schema_name ~ "]", info=True) }}
 
-            {{ custom_schema_name | trim }}
+    {%- if custom_schema_name is not none or target.name != 'prod' -%}
+
+        {{ default_schema }}
 
     {%- else -%}
     
-            {{ default_schema }}
+        {{ custom_schema_name | trim }}
 
     {%- endif -%}
 
